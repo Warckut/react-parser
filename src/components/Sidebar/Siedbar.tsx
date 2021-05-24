@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Checkbox from '../Checkbox';
+import Checkbox from './Checkbox';
 import './Sidebar.css'
 
 type Sidebar = {
@@ -41,15 +41,15 @@ export const Sidebar = ({ onChangeShops} : Sidebar) => {
 
     return (
         <div className="sidebar">
-                Магазины:
-                    <ul>
-                        {shops.map( (shop) => {
-                            return (
-                                <li><Checkbox onChange={handleCheckElement} title={shop.title} /></li>
-                            )
-                        })}
-                    </ul>
-                <input className="sidebar__button" type="submit" onClick={onClick} value="Показать" />
+            Магазины:
+                <ul>
+                    {shops.map( (shop) => {
+                        return (
+                            <li><Checkbox onChange={handleCheckElement} title={shop.title} /></li>
+                        )
+                    })}
+                </ul>
+            <input className="sidebar__button" type="submit" onClick={onClick} value="Показать" />
         </div>
     ) 
 }
